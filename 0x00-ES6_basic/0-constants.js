@@ -1,5 +1,3 @@
-#!/usr/bin/node
-// Function to use const and let
 export function taskFirst() {
   const task = 'I prefer const when I can.';
   return task;
