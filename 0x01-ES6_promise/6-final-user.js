@@ -6,14 +6,14 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
 
   promises.push(
     signUpUser(firstName, lastName)
-      .then((response) => ({ status: 'resolved', value: response }))
+      .then((response) => ({ status: 'fulfilled', value: response }))
       .catch((error) => ({ status: 'rejected', value: error })),
   );
 
   promises.push(
     uploadPhoto(fileName)
-      .then((response) => ({ status: 'resolved', value: response }))
+      .then((response) => ({ status: 'fulfilled', value: response }))
       .catch((error) => ({ status: 'rejected', value: error })),
   );
-  return Promise.all(promises);
+  return new Promise.all(promises);
 }
