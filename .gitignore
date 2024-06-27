@@ -1,6 +1,7 @@
 *-main.js
 node_modules
 babel.config.js
-0x00-ES6_basic/package-lock.json
-0x00-ES6_basic/package.json
-0x00-ES6_basic/.eslintrc.js
+package-lock.json
+package.json
+.eslintrc.js
+utils.js
