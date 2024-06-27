@@ -2,25 +2,18 @@ import signUpUser from './4-user-promise';
 import uploadPhoto from './5-photo-reject';
 
 export default function handleProfileSignup(firstName, lastName, fileName) {
-  let fir = [];
+  const promises = [];
 
-  Promise.all([
+  promises.push(
     signUpUser(firstName, lastName)
-      .then((response) => {
-        data = {
-          status: 'resolved',
-          value: response
-        };
-        fir.push(data);
-      }),
+      .then((response) => ({ status: 'resolved', value: response }))
+      .catch((error) => ({ status: 'rejected', value: error })),
+  );
 
+  promises.push(
     uploadPhoto(fileName)
-      .then((response) => fir.push(response)),
-  ])
-    .then(() => {
-      console.log(fir);
-      console.log(con);
-    });
-
-  return 'Temp';
+      .then((response) => ({ status: 'resolved', value: response }))
+      .catch((error) => ({ status: 'rejected', value: error })),
+  );
+  return Promise.all(promises);
 }
