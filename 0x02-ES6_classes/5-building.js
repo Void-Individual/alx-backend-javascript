@@ -6,6 +6,11 @@ export default class Building {
     } else {
       throw new TypeError('Sqft must be an integer');
     }
+    if (this.constructor != Building) {
+      if (typeof this.evacuationWarningMessage !== 'function') {
+        throw new Error(`Class extending Building must override evacuationWarningMessage`);
+      }
+    }
   }
 
   get sqft() {
@@ -17,18 +22,6 @@ export default class Building {
       this._sqft = sqft;
     } else {
       throw new TypeError('Sqft must be an integer');
-    }
-  }
-
-  // Abstract method
-  evacuationWarningMessage() {
-    throw new Error(`Class extending ${this.constructor.name} must override evacuationWarningMessage`);
-  }
-
-  // Ensure subclass implements specific methods
-  ensureEvacuation() {
-    if (this.evacuationWarningMessage === Building.prototype.evacuationWarningMessage) {
-      throw new Error(`Class extending ${this.constructor.name} must override evacuationWarningMessage`);
     }
   }
 }
