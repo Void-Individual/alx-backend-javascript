@@ -16,6 +16,5 @@ export default function getListStudents() {
     firstname: 'Serena',
     location: 'San Francisco',
   };
-
   return [obj1, obj2, obj3];
 }
