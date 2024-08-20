@@ -7,16 +7,15 @@ export default function cleanSet(set, start) {
   let x = 0;
 
   for (const str of set) {
-    if (!str) {
-      continue;
-    }
-    const cutStr = str.slice(0, start.length);
-    if (cutStr === start) {
-      if (x !== 0) {
-        newString += '-';
+    if (str) {
+      const cutStr = str.slice(0, start.length);
+      if (cutStr === start) {
+        if (x !== 0) {
+          newString += '-';
+        }
+        newString += str.slice(start.length);
+        x += 1;
       }
-      newString += str.slice(start.length);
-      x += 1;
     }
   }
   return newString;
