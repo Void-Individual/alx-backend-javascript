@@ -5,3 +5,6 @@ package-lock.json
 package.json
 .eslintrc.js
 #utils.js
+!0x04-TypeScript/task_0/.eslintrc.js
+!0x04-TypeScript/task_0/package.json
+0x04-TypeScript
