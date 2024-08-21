@@ -1,5 +1,5 @@
 const http = require('http');
-const { readDBAsync, getStudentsInfo, csvToJSON } = require('./3-read_file_async');
+const { readDBAsync, getStudentsInfo, csvToJSON } = require('./utils');
 
 const path = process.argv.length > 2 ? process.argv[2] : '';
 
@@ -19,9 +19,10 @@ const app = http.createServer(async (req, res) => {
   if (req.url === '/') {
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
+    res.write('This is the list of our students\n');
     try {
       const data = await countStudents(path);
-      res.end(`This is the list of our students\n${data}`);
+      res.end(`${data}`);
     } catch (err) {
       res.statusCode = 500;
       res.end(err.message);
