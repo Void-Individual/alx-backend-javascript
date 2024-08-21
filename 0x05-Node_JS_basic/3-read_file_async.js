@@ -69,7 +69,7 @@ async function readDBAsync(path) {
   }
 }
 
-module.exports = async function countStudents(path) {
+async function countStudents(path) {
   const data = await readDBAsync(path);
   const studentsData = JSON.parse(csvToJSON(data));
 
@@ -79,6 +79,11 @@ module.exports = async function countStudents(path) {
   console.log(getStudentsInfo(studentsData, 'SWE'));
 };
 
+module.exports = {
+  csvToJSON,
+  getStudentsInfo,
+  readDBAsync,
+};
 // module.exports = async function countStudents(path) {
 //  try {
 //    const data = await fs.readFile(path, 'utf-8');
