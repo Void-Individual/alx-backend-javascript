@@ -21,7 +21,8 @@ async function countStudents(path) {
     }
     console.log('Number of students:', count);
     Object.keys(fields).forEach((key) => {
-      process.stdout.write(`Number of students in ${key}: ${fields[key][0]}. `);
+      const count = fields[key][0];
+      process.stdout.write(`Number of students in ${key}: ${count}. `);
       process.stdout.write(`List: ${fields[key][1].join(', ')}\n`);
     });
   } catch (err) {
