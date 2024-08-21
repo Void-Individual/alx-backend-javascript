@@ -76,9 +76,9 @@ module.exports = function countStudents(path) {
 
   console.log(getStudentsInfo(studentsData, 'CS'));
   console.log(getStudentsInfo(studentsData, 'SWE'));
-}
+};
 
-//module.exports = function countStudents(path) {
+// module.exports = function countStudents(path) {
 //  if (!fs.existsSync(path)) {
 //    throw new Error('Cannot load the database');
 //  }
@@ -111,4 +111,4 @@ module.exports = function countStudents(path) {
 //    process.stdout.write(`Number of students in ${key}: ${fields[key][0]} `);
 //    process.stdout.write(`List: ${fields[key][1].join(', ')}\n`);
 //  });
-//};
+// };
