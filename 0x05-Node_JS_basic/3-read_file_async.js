@@ -80,6 +80,7 @@ async function countStudents(path) {
 };
 
 module.exports = {
+  countStudents,
   csvToJSON,
   getStudentsInfo,
   readDBAsync,
