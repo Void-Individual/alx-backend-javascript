@@ -11,7 +11,7 @@ describe('sendPaymentRequestToApi', function() {
     sendPaymentRequestToApi(100, 20);
 
     // Validate that Utils.calculateNumber was called with the correct arguments
-    expect(spy.calledOnceWithExactly('SUM', 100, 20)).to.be.true;
+    expect(utilsSpy.calledOnceWithExactly('SUM', 100, 20)).to.be.true;
 
     utilsSpy.restore();
   });
