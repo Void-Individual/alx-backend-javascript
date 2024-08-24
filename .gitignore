@@ -2,7 +2,7 @@
 node_modules
 babel.config.js
 package-lock.json
-package.json
+#package.json
 .eslintrc.js
 #utils.js
 !0x04-TypeScript/task_0/.eslintrc.js
